@@ -96,6 +96,25 @@ ul {
   margin-top: 0;
 }
 
+main h1 {
+  font-size: 34px;
+  font-weight: 400;
+}
+
+main h2 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+main ul {
+  margin-bottom: 28px;
+}
+
+main li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
 li {
   margin-bottom: 2px;
 }
