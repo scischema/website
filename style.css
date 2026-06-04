@@ -29,8 +29,8 @@ header {
 }
 
 .logo img {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
@@ -49,8 +49,8 @@ a:hover {
 
 .search {
   margin-left: auto;
-  width: 380px;
-  height: 46px;
+  width: 410px;
+  height: 50px;
   border: 1.5px solid #222;
   border-radius: 28px;
   display: flex;
@@ -63,14 +63,14 @@ a:hover {
 
 main {
   max-width: 1320px;
-  margin: 52px 0 0 165px;
+  margin: 52px 0 0 175px;
   padding: 0 40px 90px 0;
 }
 
 .hero {
-  max-width: 780px;
-  font-size: 31px;
-  line-height: 1.22;
+  max-width: 840px;
+  font-size: 34px;
+  line-height: 1.2;
   margin-bottom: 58px;
   font-weight: 400;
 }
@@ -82,12 +82,12 @@ main {
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 76px;
-  max-width: 1260px;
+  gap: 78px;
+  max-width: 1240px;
 }
 
 p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.45;
   margin: 0 0 18px 0;
 }
