@@ -1,0 +1,96 @@
+<main class="schema-page">
+  <section class="schema-hero">
+    <h1>Polymerase Chain Reaction (PCR)</h1>
+    <p class="schema-subtitle">A SciSchema Process Schema</p>
+
+    <div class="schema-meta">
+      <span>Domain: Biology & Biotechnology</span>
+      <span>Schema: PCR Master Schema</span>
+    </div>
+
+    <p class="schema-breadcrumb">
+      Scientific Process › Biology & Biotechnology › PCR
+    </p>
+
+    <p class="schema-description">
+      The Polymerase Chain Reaction (PCR) is a laboratory technique used to make
+      millions of copies of a specific DNA segment. Starting from a very small
+      amount of DNA, PCR repeatedly heats and cools the sample so that the target
+      DNA is copied over and over again. This makes it possible to detect,
+      analyze, or sequence DNA that would otherwise be too scarce to study.
+    </p>
+
+    <p class="schema-description">
+      PCR is commonly used in medical diagnostics, forensic analysis, genetic
+      research, and environmental monitoring.
+    </p>
+  </section>
+
+  <section class="schema-section">
+    <h2>Properties from PCR</h2>
+
+    <table class="schema-table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Expected Type</th>
+          <th>Description</th>
+          <th>Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>experiment_metadata</td>
+          <td>Object</td>
+          <td>Administrative and contextual metadata for the experiment.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>sample_preparation</td>
+          <td>Object</td>
+          <td>Sample origin, type, extraction, and quality.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>reaction_components</td>
+          <td>Object</td>
+          <td>All reagents used in the PCR reaction.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>thermal_cycling_conditions</td>
+          <td>Object</td>
+          <td>
+            Full thermal cycling protocol including initial denaturation,
+            amplification cycles, final extension, and optional hold.
+          </td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>amplicon</td>
+          <td>Object</td>
+          <td>Properties of the amplified DNA fragment.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>detection_method</td>
+          <td>Object</td>
+          <td>Method for visualizing or quantifying PCR products.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>reaction_volume</td>
+          <td>Number</td>
+          <td>Total PCR reaction volume in µL.</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>controls</td>
+          <td>Object</td>
+          <td>Experimental controls.</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
