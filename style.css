@@ -119,28 +119,6 @@ li {
   margin-bottom: 2px;
 }
 
-.page {
-  max-width: 900px;
-}
-
-.page p {
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.page h1 {
-  font-size: 42px;
-  font-weight: 400;
-  margin-bottom: 28px;
-}
-
-.page h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 36px;
-  margin-bottom: 16px;
-}
-
 a {
   color: #cc0000;
   font-weight: 700;
