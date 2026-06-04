@@ -20,7 +20,7 @@ header {
   font-weight: 700;
   text-decoration: none;
   margin-right: 42px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 nav a {
@@ -52,15 +52,15 @@ a:hover {
 
 main {
   max-width: 1320px;
-  margin: 46px 0 0 140px;
+  margin: 52px 0 0 165px;
   padding: 0 40px 90px 0;
 }
 
 .hero {
   max-width: 760px;
-  font-size: 32px;
-  line-height: 1.22;
-  margin-bottom: 34px;
+  font-size: 30px;
+  line-height: 1.24;
+  margin-bottom: 38px;
   font-weight: 400;
 }
 
@@ -71,13 +71,13 @@ main {
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  max-width: 1180px;
+  gap: 80px;
+  max-width: 1280px;
 }
 
 p {
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
   margin: 0 0 18px 0;
 }
 
@@ -103,7 +103,7 @@ footer {
 
 footer a {
   color: #cc0000;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 footer span {
