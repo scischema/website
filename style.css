@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Docs - SciSchema</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a class="site-title" href="/">SciSchema</a>
+    <nav>
+      <a href="/docs/">Docs</a>
+      <a href="/schemas/">Schemas</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/scischema">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Docs</h1>
+
+    <p>
+      Documentation for using, citing, extending, and contributing SciSchema
+      schemas will be added here.
+    </p>
+
+    <h2>Planned documentation</h2>
+    <ul>
+      <li>How to read a SciSchema page</li>
+      <li>How to use a JSON Schema</li>
+      <li>How schemas are curated</li>
+      <li>How to contribute a new schema</li>
+      <li>How persistent identifiers are assigned</li>
+    </ul>
+  </main>
+
+  <footer>
+    SciSchema · Open scientific process schemas
+  </footer>
+</body>
+</html>
