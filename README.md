@@ -4,12 +4,6 @@
 
 <h1 align="center">SciSchema.org</h1>
 
-<p align="center">
-Repository for the SciSchema.org website and machine-readable scientific process schemas.
-</p>
-
----
-
 This repository contains:
 
 * JSON Schema representations of scientific processes.
