@@ -170,12 +170,117 @@ def generate_html(process_name, domain_name, schema_title, description, rows, or
 """
 
 
+def generate_schema_index(metadata: list[dict]) -> str:
+    domains: dict[str, dict] = {}
+
+    for item in metadata:
+        process_name = item["process_name"].strip()
+        domain_slug = item["domain_slug"].strip()
+        domain_name = item["domain_name"].strip()
+        slug = item["slug"].strip() or slugify(process_name)
+
+        if not process_name or not domain_slug or not domain_name:
+            continue
+
+        if domain_slug not in domains:
+            domains[domain_slug] = {
+                "name": domain_name,
+                "schemas": []
+            }
+
+        schema_url = f"/schemas/{domain_slug}/{slug}/"
+
+        if not any(schema["url"] == schema_url for schema in domains[domain_slug]["schemas"]):
+            domains[domain_slug]["schemas"].append({
+                "name": process_name,
+                "url": schema_url
+            })
+
+    domain_sections = []
+
+    for domain_slug, domain in domains.items():
+        items = "\n".join(
+            f'      <li><a href="{escape(schema["url"])}">{escape(schema["name"])}</a></li>'
+            for schema in domain["schemas"]
+        )
+
+        domain_sections.append(f"""    <h2 id="{escape(domain_slug)}">{escape(domain["name"])}</h2>
+    <ul>
+{items}
+    </ul>""")
+
+    sections_html = "\n\n".join(domain_sections)
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SciSchema — Scientific Process Schemas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="/">
+      <img src="/assets/logo.png" alt="SciSchema Logo">
+      <span>SciSchema</span>
+    </a>
+    <nav>
+      <a href="/docs/">Docs</a>
+      <a href="/schemas/">Schemas</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/scischema">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Schemas</h1>
+
+    <h2>Organization of SciSchemas</h2>
+
+    <p>
+      SciSchema schemas describe scientific process types, each associated with a set
+      of structured properties. The schemas are organized by scientific domain.
+    </p>
+
+    <p>
+      Browse the current schema collection below.
+    </p>
+
+{sections_html}
+  </main>
+
+  <footer>
+    <a href="/terms/">Terms and conditions</a>
+    <span>•</span>
+    <span>SciSchema</span>
+    <span>•</span>
+    <span>V0.1.0</span>
+    <span>|</span>
+    <span>2026-06-04</span>
+  </footer>
+</body>
+</html>
+"""
+
+
+def write_schema_index(metadata: list[dict]) -> None:
+    index_path = TARGET_DIR / "index.html"
+    html = generate_schema_index(metadata)
+    index_path.write_text(html, encoding="utf-8")
+    print(f"UPDATED: {index_path}")
+
+
 def main() -> None:
     for path in [SOURCE_DIR, METADATA_FILE, TARGET_DIR]:
         if not path.exists():
             raise FileNotFoundError(f"Missing: {path}")
 
-    for item in load_metadata():
+    metadata = load_metadata()
+
+    for item in metadata:
         filename = item["filename"].strip()
         process_name = item["process_name"].strip()
         domain_slug = item["domain_slug"].strip()
@@ -219,6 +324,8 @@ def main() -> None:
 
         index_path.write_text(html, encoding="utf-8")
         print(f"CREATED: {index_path}")
+
+    write_schema_index(metadata)
 
 
 if __name__ == "__main__":
